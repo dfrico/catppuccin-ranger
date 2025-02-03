@@ -1,7 +1,7 @@
 <h3 align="center">
 	<img src="https://raw.githubusercontent.com/catppuccin/catppuccin/main/assets/logos/exports/1544x1544_circle.png" width="100" alt="Logo"/><br/>
 	<img src="https://raw.githubusercontent.com/catppuccin/catppuccin/main/assets/misc/transparent.png" height="30" width="0px"/>
-	Catppuccin for <a href="https://github.com/catppuccin/template">App</a>
+	Catppuccin for <a href="https://ranger.fm/">Ranger</a>
 	<img src="https://raw.githubusercontent.com/catppuccin/catppuccin/main/assets/misc/transparent.png" height="30" width="0px"/>
 </h3>
 
@@ -36,19 +36,20 @@
 
 ## Usage
 
-1. Download the flavor of your choice.
-2. Open the app and go to **Preferences** > **Appearance** > **Import theme**.
-3. Select the downloaded flavor file.
-
-<!-- The FAQ section is optional. Remove if needed.-->
-## 🙋 FAQ
-
-- Q: **_"How can I do X?"_**\
-  A: ...
+1. Find your ranger colorschemes directory. Usually, it is located in `~/.config/ranger/colorschemes`.
+   If you don't have a ~/.config/ranger directory:
+   - Run `ranger --copy-config=(rc)`
+   - Go to `~/.config/ranger` and create a directory called `colorschemes`.
+2. Go back to the cloned or downloaded directory
+3. Copy or link `catppuccin.py` to your `~/.config/ranger/colorschemes` directory.
+   - If you want to copy, run `cp catppuccin.py ~/.config/ranger/colorschemes`
+   - If you want to link, run `ln -s catppuccin.py ~/.config/ranger/colorschemes`
+4. Go to your `rc.conf` file located in `~/.config/ranger/rc.conf`.
+5. Change the line `set colorscheme ...` to `set colorscheme catppuccin`.
 
 ## 💝 Thanks to
 
-- [Human](https://github.com/catppuccin)
+- [dfrico](https://github.com/dfrico)
 
 &nbsp;
 
