@@ -37,7 +37,7 @@ MANTLE = rgb2short("#292c3c")[0]
 CRUST = rgb2short("#232634")[0]
 
 
-class CatppuccinMocha(ColorScheme):
+class CatppuccinFrappe(ColorScheme):
     progress_bar_color = BLUE
 
     def verify_browser(self, context, fg, bg, attr):
