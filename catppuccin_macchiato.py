@@ -4,41 +4,38 @@
 # This theme was greatly inspired by "Dracula" for ranger
 # It can be found in: `https://github.com/dracula/ranger`
 
+from ranger.gui.color import bold, default, default_colors, normal, reverse
 from ranger.gui.colorscheme import ColorScheme
-from ranger.gui.color import (
-    default_colors, reverse, bold, normal, default
-)
 
-# Approximate xterm indices for Catppuccin Macchiato
-# https://catppuccin.com/palette
-# See hex2xterm.py
-#
-ROSEWATER    = 224  # ~ #F4DBD6
-FLAMINGO     = 224  # ~ #F0C6C6
-PINK         = 218  # ~ #F5BDE6
-MAUVE        = 183  # ~ #C6A0F6
-RED          = 210  # ~ #ED8796
-MAROON       = 211  # ~ #EE99A0
-PEACH        = 216  # ~ #F5A97F
-YELLOW       = 223  # ~ #EED49F
-GREEN        = 150  # ~ #A6DA95
-TEAL         = 116  # ~ #8BD5CA
-SKY          = 116  # ~ #91D7E3
-SAPPHIRE     = 116  # ~ #7DC4E4
-BLUE         = 111  # ~ #8AADF4
-LAVENDER     = 147  # ~ #B7BDF8
-TEXT         = 189  # ~ #CAD3F5
-SUBTEXT 1    = 146  # ~ #B8C0E0
-SUBTEXT 0    = 146  # ~ #A5ADCB
-OVERLAY 2    = 103  # ~ #939AB7
-OVERLAY 1    = 103  # ~ #8087A2
-OVERLAY 0    = 66   # ~ #6E738D
-SURFACE 2    = 60   # ~ #5B6078
-SURFACE 1    = 59   # ~ #494D64
-SURFACE 0    = 59   # ~ #363A4F
-BASE         = 17   # ~ #24273A
-MANTLE       = 17   # ~ #1E2030
-CRUST        = 16   # ~ #181926
+from hex2xterm import rgb2short
+
+ROSEWATER = rgb2short("#F4DBD6")[0]
+FLAMINGO = rgb2short("#F0C6C6")[0]
+PINK = rgb2short("#F5BDE6")[0]
+MAUVE = rgb2short("#C6A0F6")[0]
+RED = rgb2short("#ED8796")[0]
+MAROON = rgb2short("#EE99A0")[0]
+PEACH = rgb2short("#F5A97F")[0]
+YELLOW = rgb2short("#EED49F")[0]
+GREEN = rgb2short("#A6DA95")[0]
+TEAL = rgb2short("#8BD5CA")[0]
+SKY = rgb2short("#91D7E3")[0]
+SAPPHIRE = rgb2short("#7DC4E4")[0]
+BLUE = rgb2short("#8AADF4")[0]
+LAVENDER = rgb2short("#B7BDF8")[0]
+TEXT = rgb2short("#CAD3F5")[0]
+SUBTEXT_1 = rgb2short("#B8C0E0")[0]
+SUBTEXT_0 = rgb2short("#A5ADCB")[0]
+OVERLAY_2 = rgb2short("#939AB7")[0]
+OVERLAY_1 = rgb2short("#8087A2")[0]
+OVERLAY_0 = rgb2short("#6E738D")[0]
+SURFACE_2 = rgb2short("#5B6078")[0]
+SURFACE_1 = rgb2short("#494D64")[0]
+SURFACE_0 = rgb2short("#363A4F")[0]
+BASE = rgb2short("#24273A")[0]
+MANTLE = rgb2short("#1E2030")[0]
+CRUST = rgb2short("#181926")[0]
+
 
 class CatppuccinMacchiato(ColorScheme):
     progress_bar_color = BLUE
@@ -109,12 +106,12 @@ class CatppuccinMacchiato(ColorScheme):
             attr |= bold
             # We'll conditionally change color if it's red/magenta
             if fg in (RED, PINK, MAROON):
-                fg = 15   # white
+                fg = 15  # white
             else:
                 fg = RED
 
         if not context.selected and (context.cut or context.copied):
-            fg = GRAY
+            fg = OVERLAY_1
             attr |= bold
 
         # Main column markings
@@ -132,7 +129,7 @@ class CatppuccinMacchiato(ColorScheme):
                 fg = PINK
 
         if context.inactive_pane:
-            fg = TEAL # or CYAN
+            fg = TEAL  # or CYAN
 
         return fg, bg, attr
 
@@ -156,7 +153,7 @@ class CatppuccinMacchiato(ColorScheme):
                 fg = GREEN
             elif context.bad:
                 bg = PINK
-                fg = GRAY
+                fg = OVERLAY_1
 
         if context.marked:
             attr |= bold | reverse

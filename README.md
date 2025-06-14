@@ -36,20 +36,24 @@
 
 ## Usage
 
-1. Find your ranger colorschemes directory. Usually, it is located in `~/.config/ranger/colorschemes`.
-   If you don't have a ~/.config/ranger directory:
+1. Find your ranger colorschemes directory. Usually, it is located in
+   `~/.config/ranger/colorschemes`. If you don't have a ~/.config/ranger
+   directory:
    - Run `ranger --copy-config=(rc)`
    - Go to `~/.config/ranger` and create a directory called `colorschemes`.
 2. Go back to the cloned or downloaded directory
-3. Copy or link `catppuccin.py` to your `~/.config/ranger/colorschemes` directory.
+3. Copy or link `catppuccin.py` to your `~/.config/ranger/colorschemes`
+   directory.
    - If you want to copy, run `cp catppuccin.py ~/.config/ranger/colorschemes`
-   - If you want to link, run `ln -s catppuccin.py ~/.config/ranger/colorschemes`
+   - If you want to link, run
+     `ln -s catppuccin.py ~/.config/ranger/colorschemes`
 4. Go to your `rc.conf` file located in `~/.config/ranger/rc.conf`.
 5. Change the line `set colorscheme ...` to `set colorscheme catppuccin`.
 
 ## 💝 Thanks to
 
 - [dfrico](https://github.com/dfrico)
+- [computergnome99](https://github.com/computergnome99)
 
 &nbsp;
 

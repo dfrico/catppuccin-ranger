@@ -4,42 +4,38 @@
 # This theme was greatly inspired by "Dracula" for ranger
 # It can be found in: `https://github.com/dracula/ranger`
 
+from ranger.gui.color import bold, default, default_colors, normal, reverse
 from ranger.gui.colorscheme import ColorScheme
-from ranger.gui.color import (
-    default_colors, reverse, bold, normal, default
-)
 
-#
-# Approximate xterm indices for Catppuccin Latte
-# https://catppuccin.com/palette
-# See hex2xterm.py
-#
-ROSEWATER    = 174  # ~ #DC8A78
-FLAMINGO     = 174  # ~ #DD7878
-PINK         = 176  # ~ #EA76CB
-MAUVE        = 99   # ~ #8839EF
-RED          = 161  # ~ #D20F39
-MAROON       = 167  # ~ #E64553
-PEACH        = 202  # ~ #FE640B
-YELLOW       = 172  # ~ #DF8E1D
-GREEN        = 70   # ~ #40A02B
-TEAL         = 30   # ~ #179299
-SKY          = 38   # ~ #04A5E5
-SAPPHIRE     = 37   # ~ #209FB5
-BLUE         = 27   # ~ #1E66F5
-LAVENDER     = 69   # ~ #7287FD
-TEXT         = 59   # ~ #4C4F69
-SUBTEXT 1    = 60   # ~ #5C5F77
-SUBTEXT 0    = 60   # ~ #6C6F85
-OVERLAY 2    = 102  # ~ #7C7F93
-OVERLAY 1    = 103  # ~ #8C8FA1
-OVERLAY 0    = 145  # ~ #9CA0B0
-SURFACE 2    = 145  # ~ #ACB0BE
-SURFACE 1    = 146  # ~ #BCC0CC
-SURFACE 0    = 188  # ~ #CCD0DA
-BASE         = 231  # ~ #EFF1F5
-MANTLE       = 189  # ~ #E6E9EF
-CRUST        = 188  # ~ #DCE0E8
+from hex2xterm import rgb2short
+
+ROSEWATER = rgb2short("#DC8A78")[0]
+FLAMINGO = rgb2short("#DD7878")[0]
+PINK = rgb2short("#EA76CB")[0]
+MAUVE = rgb2short("#8839EF")[0]
+RED = rgb2short("#D20F39")[0]
+MAROON = rgb2short("#E64553")[0]
+PEACH = rgb2short("#FE640B")[0]
+YELLOW = rgb2short("#DF8E1D")[0]
+GREEN = rgb2short("#40A02B")[0]
+TEAL = rgb2short("#179299")[0]
+SKY = rgb2short("#04A5E5")[0]
+SAPPHIRE = rgb2short("#209FB5")[0]
+BLUE = rgb2short("#1E66F5")[0]
+LAVENDER = rgb2short("#7287FD")[0]
+TEXT = rgb2short("#4C4F69")[0]
+SUBTEXT_1 = rgb2short("#5C5F77")[0]
+SUBTEXT_0 = rgb2short("#6C6F85")[0]
+OVERLAY_2 = rgb2short("#7C7F93")[0]
+OVERLAY_1 = rgb2short("#8C8FA1")[0]
+OVERLAY_0 = rgb2short("#9CA0B0")[0]
+SURFACE_2 = rgb2short("#ACB0BE")[0]
+SURFACE_1 = rgb2short("#BCC0CC")[0]
+SURFACE_0 = rgb2short("#CCD0DA")[0]
+BASE = rgb2short("#EFF1F5")[0]
+MANTLE = rgb2short("#E6E9EF")[0]
+CRUST = rgb2short("#DCE0E8")[0]
+
 
 class CatppuccinLatte(ColorScheme):
     """
@@ -52,6 +48,7 @@ class CatppuccinLatte(ColorScheme):
       - socket => PINK
       - etc.
     """
+
     progress_bar_color = BLUE
 
     def verify_browser(self, context, fg, bg, attr):
@@ -119,12 +116,12 @@ class CatppuccinLatte(ColorScheme):
             attr |= bold
             # We'll conditionally change color if it's red/magenta
             if fg in (RED, PINK, MAROON):
-                fg = 15   # white
+                fg = 15  # white
             else:
                 fg = RED
 
         if not context.selected and (context.cut or context.copied):
-            fg = GRAY
+            fg = OVERLAY_1
             attr |= bold
 
         # Main column markings
@@ -143,7 +140,7 @@ class CatppuccinLatte(ColorScheme):
                 fg = PINK
 
         if context.inactive_pane:
-            fg = TEAL # or CYAN
+            fg = TEAL  # or CYAN
 
         return fg, bg, attr
 
@@ -167,7 +164,7 @@ class CatppuccinLatte(ColorScheme):
                 fg = GREEN
             elif context.bad:
                 bg = PINK
-                fg = GRAY
+                fg = OVERLAY_1
 
         if context.marked:
             attr |= bold | reverse
