@@ -7,37 +7,35 @@
 from ranger.gui.color import bold, default, default_colors, normal, reverse
 from ranger.gui.colorscheme import ColorScheme
 
-from hex2xterm import rgb2short
-
-ROSEWATER = rgb2short("#f2d5cf")[0]
-FLAMINGO = rgb2short("#eebebe")[0]
-PINK = rgb2short("#f4b8e4")[0]
-MAUVE = rgb2short("#ca9ee6")[0]
-RED = rgb2short("#e78284")[0]
-MAROON = rgb2short("#ea999c")[0]
-PEACH = rgb2short("#ef9f76")[0]
-YELLOW = rgb2short("#e5c890")[0]
-GREEN = rgb2short("#a6d189")[0]
-TEAL = rgb2short("#81c8be")[0]
-SKY = rgb2short("#99d1db")[0]
-SAPPHIRE = rgb2short("#85c1dc")[0]
-BLUE = rgb2short("#8caaee")[0]
-LAVENDER = rgb2short("#babbf1")[0]
-TEXT = rgb2short("#c6d0f5")[0]
-SUBTEXT_1 = rgb2short("#b5bfe2")[0]
-SUBTEXT_0 = rgb2short("#a5adce")[0]
-OVERLAY_2 = rgb2short("#949cbb")[0]
-OVERLAY_1 = rgb2short("#838ba7")[0]
-OVERLAY_0 = rgb2short("#737994")[0]
-SURFACE_2 = rgb2short("#626880")[0]
-SURFACE_1 = rgb2short("#51576d")[0]
-SURFACE_0 = rgb2short("#414559")[0]
-BASE = rgb2short("#303446")[0]
-MANTLE = rgb2short("#292c3c")[0]
-CRUST = rgb2short("#232634")[0]
+ROSEWATER = "..."
+FLAMINGO = "..."
+PINK = "..."
+MAUVE = "..."
+RED = "..."
+MAROON = "..."
+PEACH = "..."
+YELLOW = "..."
+GREEN = "..."
+TEAL = "..."
+SKY = "..."
+SAPPHIRE = "..."
+BLUE = "..."
+LAVENDER = "..."
+TEXT = "..."
+SUBTEXT_1 = "..."
+SUBTEXT_0 = "..."
+OVERLAY_2 = "..."
+OVERLAY_1 = "..."
+OVERLAY_0 = "..."
+SURFACE_2 = "..."
+SURFACE_1 = "..."
+SURFACE_0 = "..."
+BASE = "..."
+MANTLE = "..."
+CRUST = "..."
 
 
-class CatppuccinFrappe(ColorScheme):
+class BaseConfig(ColorScheme):
     progress_bar_color = BLUE
 
     def verify_browser(self, context, fg, bg, attr):
