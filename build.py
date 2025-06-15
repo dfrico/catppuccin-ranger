@@ -111,7 +111,7 @@ def update_config_colors(config: str, flavor: dict[str, str]) -> str:
     def replacer(match: re.Match[str]) -> str:
         key = match.group(1)
         lower_key = key.lower()
-        return f"{key} = {flavor.get(lower_key, match.group(0))!r}"
+        return f"{key} = {flavor.get(lower_key, match.group(0))}"
 
     return pattern.sub(replacer, config)
 
