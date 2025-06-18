@@ -317,7 +317,7 @@ def print_all():
     print("Printed all codes.")
     print("You can translate a hex or 0-255 code by providing an argument.")
 
-def rgb2short(rgb: str) -> str:
+def rgb2short(rgb: str) -> tuple[str, str]:
     """ Find the closest xterm-256 approximation to the given RGB value.
     @param rgb: Hex code representing an RGB value, eg, 'abcdef'
     @returns: String between 0 and 255, compatible with xterm.
