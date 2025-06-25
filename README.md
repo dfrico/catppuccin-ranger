@@ -36,19 +36,43 @@
 
 ## Usage
 
-1. Find your ranger colorschemes directory. Usually, it is located in
+1. Go to the **Releases** page and download your preferred flavor(s).
+2. Find your ranger colorschemes directory. Usually, it is located in
    `~/.config/ranger/colorschemes`. If you don't have a ~/.config/ranger
    directory:
    - Run `ranger --copy-config=(rc)`
    - Go to `~/.config/ranger` and create a directory called `colorschemes`.
-2. Go back to the cloned or downloaded directory
-3. Copy or link `catppuccin.py` to your `~/.config/ranger/colorschemes`
-   directory.
-   - If you want to copy, run `cp catppuccin.py ~/.config/ranger/colorschemes`
-   - If you want to link, run
-     `ln -s catppuccin.py ~/.config/ranger/colorschemes`
+3. Copy or link your downloaded colorscheme file(s) to your
+   `~/.config/ranger/colorschemes` directory.
+   - If you want to **copy**, run
+     ```bash
+     cp catppuccin_<flavor>.py ~/.config/ranger/colorschemes
+     ```
+   - If you want to **link**, run
+     ```bash
+     ln -s catppuccin_<falvor>.py ~/.config/ranger/colorschemes
+     ```
 4. Go to your `rc.conf` file located in `~/.config/ranger/rc.conf`.
-5. Change the line `set colorscheme ...` to `set colorscheme catppuccin`.
+5. Update the line `set colorscheme ...` to reference your flavor:
+   ```diff
+   # Which colorscheme to use?  These colorschemes are available by default:
+   # default, jungle, snow, solarized
+   - set colorscheme ...
+   + set colorscheme catppuccin_mocha
+   ```
+
+## Building
+
+If you want to customize the theme or contribute to it, you can clone the repo
+and build the theme files for yourself.
+
+Just run the build script to generate the theme files:
+
+```bash
+python3 build.py
+```
+
+This will generate the colorscheme files in the `./output` directory.
 
 ## 💝 Thanks to
 
