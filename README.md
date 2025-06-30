@@ -50,7 +50,7 @@
      ```
    - If you want to **link**, run
      ```bash
-     ln -s catppuccin_<falvor>.py ~/.config/ranger/colorschemes
+     ln -s catppuccin_<flavor>.py ~/.config/ranger/colorschemes
      ```
 4. Go to your `rc.conf` file located in `~/.config/ranger/rc.conf`.
 5. Update the line `set colorscheme ...` to reference your flavor:
