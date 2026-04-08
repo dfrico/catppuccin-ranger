@@ -53,7 +53,6 @@ class BaseConfig(ColorScheme):
 
         if context.border:
             fg = BLUE
-            bg = RED
 
         if context.document:
             attr |= normal
